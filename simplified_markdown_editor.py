@@ -15,6 +15,11 @@ def show_content():
     for line in content:
         print(line)
 
+def save_to_file():
+    with open('output.md', 'w') as f:
+        for line in content:
+            f.write(line + '\n')
+
 def formatting(formatter):
     # plain
     if formatter == FORMATTERS[0]:
@@ -86,6 +91,7 @@ def main():
             print(MSG_UNKNOWN)
         else:
             if f == COMMANDS[1]:
+                save_to_file()
                 break
             if f == COMMANDS[0]:
                 show_help()
