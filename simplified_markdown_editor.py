@@ -43,9 +43,35 @@ def formatting(formatter):
         line = input('Text: ')
         content.append(f'`{line}`')
     # ordered-list
-    pass
+    if formatter == FORMATTERS[6]:
+        while True:
+            rows = input('Number of rows: ')
+            try:
+                rows = int(rows)
+                if rows > 0:
+                    break
+                else:
+                    print('The number of rows should be greater than zero.')
+            except:
+                print('wrong format')
+        for i in range(rows):
+            line = input(f'Row #{i+1}: ')
+            content.append(f'{i+1}. {line}')
     # unordered-list
-    pass
+    if formatter == FORMATTERS[7]:
+        while True:
+            rows = input('Number of rows: ')
+            try:
+                rows = int(rows)
+                if rows > 0:
+                    break
+                else:
+                    print('The number of rows should be greater than zero.')
+            except:
+                print('wrong format')
+        for i in range(rows):
+            line = input(f'Row #{i+1}: ')
+            content.append(f'* {line}')
     # new-line
     if formatter == FORMATTERS[8]:
         content.append('')
